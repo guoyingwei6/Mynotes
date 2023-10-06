@@ -1,17 +1,14 @@
 # Home
 
-For full documentation visit [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+## 本站介绍
+为了方便Obsidian写的笔记分享给别人，于是采用mkdocs搭建了该网站。
+希望自己能坚持收集，坚持整理，坚持输出。
 
-## Commands
+## 本站的几个板块
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+* [**01.Programing**](/01.Programing/) ： 编程相关。
+* [**02.Bioinfomatics**](/02.Bioinfomatics/)：生信相关。 
+* [**03.Reasearch**](/03.Research/) ：科研项目。
+* [**04.About**](/04.About/about/)  ：关于。
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 结语
