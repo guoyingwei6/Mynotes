@@ -2,8 +2,8 @@ site_name: YingweiGuo's Notes
      
 
 theme:
-  #logo: assets/logo.png
-  #favicon: images/favicon.ico
+  #logo: assets/logo.svg
+  #favicon: images/favicon.png
   icon:
     repo: fontawesome/brands/github-alt
     #logo: bootstrap/envelope-paper
@@ -86,19 +86,19 @@ plugins:
 
 
 
-extra:
-  consent:
-    title: Cookie consent
-    description: >- 
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+#extra:
+  #consent:
+  #  title: Cookie consent
+  #  description: >- 
+  #    We use cookies to recognize your repeated visits and preferences, as well
+  #    as to measure the effectiveness of our documentation and whether users
+  #    find what they're searching for. With your consent, you're helping us to
+  #    make our documentation better.
   #version:
     #provider: mike  # 版本控制
 
-repo_url: https://github.com/guoyingwei6/Mynotes
-repo_name: guoyingwei6/Mynotes
+repo_url: https://github.com/guoyingwei6/notes
+repo_name: guoyingwei6/notes
 copyright: Copyright &copy; 2023 Yingwei Guo
 
 markdown_extensions:
