@@ -1,8 +1,12 @@
 site_name: YingweiGuo's Notes
+     
 
 theme:
+  #logo: assets/logo.png
+  #favicon: images/favicon.ico
   icon:
     repo: fontawesome/brands/github-alt
+    #logo: bootstrap/envelope-paper
 
 #  logo: assets/logo.png  :pushpin:
 #  favicon: images/favicon.png
@@ -40,6 +44,14 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 plugins:
+  - blog:
+      post_readtime: true
+      categories: true
+      blog_toc: true
+      post_url_format: "{categories}/{slug}"
+      post_excerpt: optional
+      archive_toc: true
+      categories_toc: true
   - tags:
       tags_file: tags.md
   # 视频插件
@@ -58,7 +70,7 @@ plugins:
   # 更新时间显示
   - git-revision-date-localized:
       enable_creation_date: true
-#  - meta
+
 
 
 
@@ -82,8 +94,8 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-  version:
-    provider: mike  # 版本控制
+  #version:
+    #provider: mike  # 版本控制
 
 repo_url: https://github.com/guoyingwei6/Mynotes
 repo_name: guoyingwei6/Mynotes
@@ -106,7 +118,11 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
+      #emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_png
+      #options:
+        #custom_icons:
+          #- overrides/.icons
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -118,6 +134,7 @@ markdown_extensions:
 #  - pymdownx.emoji:
 #      emoji_index: !!python/name:material.extensions.emoji.twemoji
 #      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 extra_javascript:
   # 鼠标点击特效
   - https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js
