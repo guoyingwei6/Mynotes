@@ -1,0 +1,2680 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Mac%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/">
+      
+      
+        <link rel="next" href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B0%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>Tmux教程 - YingweiGuo's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tmux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="YingweiGuo&#39;s Notes" class="md-header__button md-logo" aria-label="YingweiGuo's Notes" data-md-component="logo">
+      
+  <img src="../../../assets/images/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YingweiGuo's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tmux教程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/guoyingwei6/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guoyingwei6/notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Mac%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/" class="md-tabs__link">
+          
+  
+  01.Programing
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../02.Bioinfomatics/" class="md-tabs__link">
+          
+  
+  02.Bioinfomatics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../03.Research/01.Paper%20management/_Endnote/" class="md-tabs__link">
+          
+  
+  03.Research
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../04.About/about/" class="md-tabs__link">
+          
+  
+  04.About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="YingweiGuo&#39;s Notes" class="md-nav__button md-logo" aria-label="YingweiGuo's Notes" data-md-component="logo">
+      
+  <img src="../../../assets/images/favicon.png" alt="logo">
+
+    </a>
+    YingweiGuo's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/guoyingwei6/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guoyingwei6/notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01.Programing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            01.Programing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01.Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            01.Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mac%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac终端配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tmux教程
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tmux教程
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tmux" class="md-nav__link">
+    tmux介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="tmux介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    会话、窗口和面板
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmux_1" class="md-nav__link">
+    交互式使用tmux
+  </a>
+  
+    <nav class="md-nav" aria-label="交互式使用tmux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建新会话
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    状态栏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    前缀键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    帮助键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    命令提示符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    连接和分离会话
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    显示会话列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux_2" class="md-nav__link">
+    终止所有tmux会话
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建新窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    拆分窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    切换窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    更改活动面板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    选择会话、窗口和窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    分离其它客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    终止会话、窗口或窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    重命名会话与窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    交换和移动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    调整窗格大小和缩放窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    窗口布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    复制和粘贴
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    查找窗口和窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    使用鼠标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmux_3" class="md-nav__link">
+    配置tmux
+  </a>
+  
+    <nav class="md-nav" aria-label="配置tmux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    参考配置文件:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    常用配置更改
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    其它功能
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B0%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务器新用户配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02.Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02.Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.Python/2019-02-11-Morse-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019 02 11 Morse code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.Python/Jupyter%20notebook%20%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter notebook 安装与下载
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.Python/Jupyter%20notebook%20%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter notebook 插件安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.Python/typer%E4%B8%BA%E8%84%9A%E6%9C%AC%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Typer为脚本添加命令行参数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03.R
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            03.R
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.R/RStudio%20IDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RStudio IDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02.Bioinfomatics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            02.Bioinfomatics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01.Knowledge
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            01.Knowledge
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01.Evolution
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            01.Evolution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/01.Knowledge/01.Evolution/yanhua/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生信知识储备
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/01.Knowledge/01.Evolution/%E7%94%9F%E7%89%A9%E6%BC%94%E5%8C%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生物演化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02.Technology
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            02.Technology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    00.SNP calling
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            00.SNP calling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/02.Technology/00.SNP_calling/mapping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02.Selective sweep
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02.Selective sweep
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/02.Technology/02.Selective_sweep/01.Fst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01.Fst
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/02.Technology/02.Selective_sweep/02.pi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02.pi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03.GWAS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            03.GWAS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02.Bioinfomatics/02.Technology/03.GWAS/EMMAX%E8%BF%9B%E8%A1%8CGWAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    【GWAS】利用EMMAX软件进行GWAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03.Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            03.Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01.Paper management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            01.Paper management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03.Research/01.Paper%20management/_Endnote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Endnote
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    04.About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            04.About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04.About/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tmux" class="md-nav__link">
+    tmux介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="tmux介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    会话、窗口和面板
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmux_1" class="md-nav__link">
+    交互式使用tmux
+  </a>
+  
+    <nav class="md-nav" aria-label="交互式使用tmux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建新会话
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    状态栏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    前缀键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    帮助键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    命令提示符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    连接和分离会话
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    显示会话列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmux_2" class="md-nav__link">
+    终止所有tmux会话
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建新窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    拆分窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    切换窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    更改活动面板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    选择会话、窗口和窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    分离其它客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    终止会话、窗口或窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    重命名会话与窗口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    交换和移动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    调整窗格大小和缩放窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    窗口布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    复制和粘贴
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    查找窗口和窗格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    使用鼠标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmux_3" class="md-nav__link">
+    配置tmux
+  </a>
+  
+    <nav class="md-nav" aria-label="配置tmux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    参考配置文件:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    常用配置更改
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    其它功能
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../tags/#tmux" class="md-tag">tmux</a>
+    
+  
+</nav>
+
+
+  
+  
+
+
+  <h1>Tmux教程</h1>
+
+<div><h2 id="tmux">tmux介绍<a class="headerlink" href="#tmux" title="Permanent link">¶</a></h2>
+<p>tmux是一个在终端中运行的程序，并允许在其中运行多个其他终端程序。</p>
+<h3 id="_1">会话、窗口和面板<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<p>在了解 tmux ，我们需要了解三个概念：会话、窗口与面板。简单解释就是：我们打开一个终端，就叫创建一个会话，同时会在会话中打开一个窗口。经常我们都是一个窗口，然后在里面输入 Linux 命令进行操作，如果此时需要连多台服务器，或者做多个不同目录下的操作，我们就需要开多个窗口，而 tmux 就是解决这一痛点，它可以让我们在一个窗口下开多个面板，进行不同的操作。也就是说一个会话可以打开多个个窗口，一个窗口可以有多个面板。</p>
+<p>In summary:</p>
+<ul>
+<li>Programs run in terminals in panes, which each belong to one window.</li>
+<li>Each window has a name and one active pane.</li>
+<li>Windows are linked to one or more sessions.</li>
+<li>Each session has a list of windows, each with an index.</li>
+<li>One of the windows in a session is the current window.</li>
+<li>Sessions are attached to one or more clients, or are detached (attached to no clients).</li>
+<li>Each client is attached to one session.</li>
+</ul>
+<h2 id="tmux_1">交互式使用tmux<a class="headerlink" href="#tmux_1" title="Permanent link">¶</a></h2>
+<h3 id="_2">创建新会话<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>tmux new -s mysession
+</code></pre></div>
+<p><code>-s</code>参数指定会话名字</p>
+<h3 id="_3">状态栏<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>连接 tmux 客户端时，它会在屏幕的底部显示一个状态行。默认情况下为绿色</p>
+<p><a class="glightbox" href="https://vip2.loli.io/2023/10/06/eVraQktBwiRpcMS.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="20231006205509" src="https://vip2.loli.io/2023/10/06/eVraQktBwiRpcMS.png"></a></p>
+<h3 id="_4">前缀键<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>The default prefix key is <code>C-b</code>, which means the <code>Ctrl</code> key and <code>b</code>. In tmux, modifier keys are shown by prefixing a key with <code>C-</code> for the control key, <code>M-</code> for the meta key (normally <code>Alt</code> on modern computers) and <code>S-</code> for the shift key. These may be combined together, so <code>C-M-x</code> means pressing the control key, meta key and <code>x</code> together.</p>
+<p>When the prefix key is pressed, tmux waits for another key press and that determines what tmux command is executed. Keys like this are shown here with a space between them: <code>C-b c</code> means first the prefix key <code>C-b</code> is pressed, then it is released and then the <code>c</code> key is pressed. Care must be taken to release the <code>Ctrl</code> key after pressing <code>C-b</code> if necessary - <code>C-b c</code> is different from <code>C-b C-c</code>.</p>
+<h3 id="_5">帮助键<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>Every default tmux key binding has a short description to help remember what the key does. A list of all the keys can be seen by pressing <code>C-b ?</code></p>
+<h3 id="_6">命令提示符<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<p>tmux has an interactive command prompt. This can be opened by pressing <code>C-b :</code> and appears instead of the status line</p>
+<h3 id="_7">连接和分离会话<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>tmux attach -t mysession
+</code></pre></div>
+<p><code>-d</code>分离附加到会话的任何其他客户端：</p>
+<div class="highlight"><pre><span></span><code>tmux attach -dt mysession
+</code></pre></div>
+<h3 id="_8">显示会话列表<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>The <code>list-session</code> command (alias <code>ls</code>) shows a list of available sessions that can be attached. This shows four sessions called <code>1</code>, <code>2</code>, <code>myothersession</code> and <code>mysession</code>:</p>
+<div class="highlight"><pre><span></span><code>$ tmux ls
+1: 3 windows (created Sat Feb 22 11:44:51 2020)
+2: 1 windows (created Sat Feb 22 11:44:51 2020)
+myothersession: 2 windows (created Sat Feb 22 11:44:51 2020)
+mysession: 1 windows (created Sat Feb 22 11:44:51 2020)
+</code></pre></div>
+<h3 id="tmux_2">终止所有tmux会话<a class="headerlink" href="#tmux_2" title="Permanent link">¶</a></h3>
+<p>在任意会话的命令提示符下，输入kill-server就会把所有的tmux会话终止，慎用！</p>
+<div class="highlight"><pre><span></span><code>kill-server
+</code></pre></div>
+<h3 id="_9">创建新窗口<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p>A new window can be created in an attached session with the <code>C-b c</code> key binding which runs the <code>new-window</code> command. The new window is created at the first available index - so the second window will have index 1. The new window becomes the current window of the session.</p>
+<p>If there are any gaps in the window list, they are filled by new windows. So if there are windows with indexes 0 and 2, the next new window will be created as index 1.</p>
+<div class="highlight"><pre><span></span><code>:neww -dn mynewwindow
+</code></pre></div>
+<ul>
+<li><code>-d</code> 标志创建窗口，但不使其成为当前窗口</li>
+<li><code>-n</code> 允许为新窗口指定名称。例如，使用命令提示符创建一个调用 <code>mynewwindow</code> 的窗口，而不使其成为当前窗口</li>
+</ul>
+<p><code>-t</code> 标志指定窗口的目标。命令目标具有特殊的语法，但对于 <code>new-window</code> 简单的使用，只需提供窗口索引就足够了。这将在索引 999 处创建一个窗口：
+ </p>
+<div class="highlight"><pre><span></span><code>:neww -t 999
+</code></pre></div>
+<p>可以在新窗口中运行的命令，其方式与 <code>new-window</code> 相同 <code>new-session</code> 。例如，要创建一个运行 top（1） 的新窗口：</p>
+<div class="highlight"><pre><span></span><code>:neww top
+</code></pre></div>
+<h3 id="_10">拆分窗口<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p>通过拆分窗口来创建面板。这是使用默认情况下绑定到两个键的 <code>split-window</code> 命令完成的：</p>
+<ul>
+<li><code>C-b %</code> 将当前窗格水平拆分为两个窗格，生成两个彼此相邻的窗格，一个在左侧，一个在右侧。</li>
+<li><code>C-b "</code> 将当前窗格垂直拆分为两个，生成两个窗格，一个在另一个之上。</li>
+</ul>
+<p><code>split-window</code> has several useful flags:\
+<code>split-window</code> 有几个有用的标志：</p>
+<ul>
+<li><code>-h</code> does a horizontal split and <code>-v</code> a vertical split.\
+  <code>-h</code> 执行水平拆分和 <code>-v</code> 垂直拆分。</li>
+<li><code>-d</code> does not change the active pane to the newly created pane.\
+  <code>-d</code> 不会将活动窗格更改为新创建的窗格。</li>
+<li><code>-f</code> makes a new pane spanning the whole width or height of the window instead of being constrained to the size of the pane being split.\
+  <code>-f</code> 创建一个跨越窗口的整个宽度或高度的新窗格，而不是限制为要拆分的窗格的大小。</li>
+<li><code>-b</code> puts the new pane to the left or above of the pane being split instead of to the right or below.\
+  <code>-b</code> 将新窗格放在要拆分的窗格的左侧或上方，而不是放在右侧或下方。</li>
+</ul>
+<p>A command to be run in the new pane may be given to <code>split-window</code> in the same way as <code>new-session</code> and <code>new-window</code>.\
+要在新窗格中运行的命令可以 <code>split-window</code> 采用与 和 <code>new-window</code> 相同的 <code>new-session</code> 方式给出。</p>
+<h3 id="_11">切换窗口<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<p>There are several key bindings to change the current window of a session:</p>
+<ul>
+<li><code>C-b 0</code> 更改为窗口 0，更改为窗口 1， <code>C-b 1</code> 直至窗口 9 的窗口 <code>C-b 9</code> 。</li>
+<li><code>C-b '</code> 提示输入窗口索引并更改该窗口。</li>
+<li><code>C-b n</code> 按编号更改为窗口列表中的下一个窗口。因此，在窗口 1 中按 When 将 <code>C-b n</code> 更改为窗口 2（如果存在）。</li>
+<li><code>C-b p</code> 按编号更改窗口列表中的上一个窗口。</li>
+<li><code>C-b l</code> 更改为最后一个窗口，即当前窗口之前的最后一个窗口。</li>
+</ul>
+<p>These are all variations of the <code>select-window</code> command.\
+这些都是命令的 <code>select-window</code> 变体。</p>
+<h3 id="_12">更改活动面板<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<p>The active pane can be changed between the panes in a window with these key bindings:</p>
+<ul>
+<li><code>C-b Up</code>, <code>C-b Down</code>, <code>C-b Left</code> and <code>C-b Right</code> change to the pane above, below, left or right of the active pane. These keys wrap around the window, so pressing <code>C-b Down</code> on a pane at the bottom will change to a pane at the top.</li>
+<li><code>C-b q</code> 在窗格顶部打印窗格编号及其大小一小段时间。在数字键消失之前按其中一个数字键会将活动窗格更改为所选窗格，因此 <code>C-b q 1</code> 将更改为窗格编号 1</li>
+<li><code>C-b o</code> 按窗格编号移动到下一个窗格，并将该窗格与活动窗格交换， <code>C-b C-o</code> 以便它们在窗口中交换位置和大小。</li>
+</ul>
+<p>这些使用 <code>select-pane</code> 和 <code>display-panes</code> 命令。</p>
+<p>窗格编号不是固定的，而是按其在窗口中的位置编号的窗格，因此，如果将数字为 0 的窗格与数字为 1 的窗格交换，则数字和窗格本身都会交换。</p>
+<h3 id="_13">选择会话、窗口和窗格<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<p>TMUX 包括一种模式，可以在其中从树中选择会话、窗口或窗格，这称为树模式。</p>
+<p>它可用于浏览会话，窗口和窗格;更改附加的会话、当前窗口或活动窗格;杀死会话、窗口和窗格;或者通过标记命令一次将命令应用于多个命令。</p>
+<p>进入树模式有两个键绑定： <code>C-b s</code> 开始仅显示会话和选择附加的会话; <code>C-b w</code> 从展开会话开始，以便显示窗口，并在附加会话中选择当前窗口。</p>
+<p>树模式将窗口分为两部分：上半部分包含会话、窗口和窗格的树，下半部分包含每个窗格中光标周围区域的预览。</p>
+<p>对于会话，预览会在尽可能多的窗口中显示活动窗格;对于窗户，尽可能多的窗格适合;对于窗格，仅选择选定的窗格。</p>
+<p><a class="glightbox" href="https://vip2.loli.io/2023/10/06/x6MPV4FNsXSKihD.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="20231006205617" src="https://vip2.loli.io/2023/10/06/x6MPV4FNsXSKihD.png"></a></p>
+<p>用于控制树模式的键不需要前缀。可以使用 <code>Up</code> 和 <code>Down</code> 键导航列表。 <code>Enter</code> 对所选项目（它将成为附加的会话、当前窗口或活动窗格）的更改并退出模式。 <code>Right</code> 展开项目（如果可能） - 会话展开以显示其窗口，窗口以显示其窗格。 <code>Left</code> 折叠项目以隐藏任何窗口或窗格。 <code>O</code> 更改项目的顺序并 <code>q</code> 退出树模式。</p>
+<p>树中的项目通过按 <code>t</code> 进行标记，通过再次按下 <code>t</code> 来取消标记。标记的项目以粗体显示，并在其名称后显示 <code>*</code> 。所有标记的项目都可以通过按 <code>T</code> 取消标记。可以通过按 来一起杀死标记的项目，或者通过按 <code>X</code> <code>:</code> 提示来应用所有标记的项目的命令。</p>
+<p>树中的每个项目在行首的括号中都有快捷键。按此键将立即选择该项目（就像已选择并 <code>Enter</code> 按下一样）。前十项是 <code>0</code> 键， <code>9</code> 之后 <code>M-a</code> <code>M-z</code> 是键。</p>
+<p>这是树模式下可用的键列表，无需按前缀键：</p>
+<table>
+<thead>
+<tr>
+<th>Key 钥匙</th>
+<th>Function 功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Change the attached session, current window or active pane  <br>更改附加的会话、当前窗口或活动窗格</td>
+</tr>
+<tr>
+<td><code>Up</code></td>
+<td>Select previous item 选择上一项</td>
+</tr>
+<tr>
+<td><code>Down</code></td>
+<td>Select next item 选择下一项</td>
+</tr>
+<tr>
+<td><code>Right</code></td>
+<td>Expand item 展开项目</td>
+</tr>
+<tr>
+<td><code>Left</code></td>
+<td>Collapse item 折叠项目</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Kill selected item 杀死所选项目</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Kill tagged items 杀死标记的项目</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Scroll preview left 向左滚动预览</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Scroll preview right 向右滚动预览</td>
+</tr>
+<tr>
+<td><code>C-s</code></td>
+<td>Search by name 按名称搜索</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>Repeat last search 重复上次搜索</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td>Toggle if item is tagged  <br>切换项目是否被标记</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>Tag no items 不标记任何项目</td>
+</tr>
+<tr>
+<td><code>C-t</code></td>
+<td>Tag all items 标记所有项目</td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td>Prompt for a command to run for the selected item or each tagged item  <br>提示为所选项目或每个标记的项目运行命令</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>Change sort field 更改排序字段</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>Reverse sort order 反向排序顺序</td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>Toggle preview 切换预览</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>Exit tree mode 退出树模式</td>
+</tr>
+</tbody>
+</table>
+<p>使用 <code>choose-tree</code> 命令激活树模式。</p>
+<h3 id="_14">分离其它客户端<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<p>A list of clients is available by pressing <code>C-b D</code> (that is, <code>C-b S-d</code>). This is similar to tree mode and is called client mode.</p>
+<p>每个客户端都显示在上半部分的列表中，包括其名称、附加的会话、大小以及上次使用的时间和日期;下半部分包含所选客户端的预览，其中包含尽可能多的状态行。</p>
+<p>移动键和标签键与树模式相同，但其他键不同，例如，键 <code>Enter</code> 分离所选客户端。</p>
+<p>以下是客户端模式下的键列表，没有与树模式相同的移动和标记键：</p>
+<table>
+<thead>
+<tr>
+<th>Key 钥匙</th>
+<th>Function 功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Detach selected client 分离所选客户端</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Detach selected client, same as <code>Enter</code>  <br>分离选定的客户端，与 <code>Enter</code></td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Detach tagged clients 分离标记的客户端</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Detach selected client and try to kill the shell it was started from  <br>分离选定的客户端并尝试终止它启动的 shell</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Detach tagged clients and try to kill the shells they were started from  <br>分离标记的客户端并尝试终止它们启动的 shell</td>
+</tr>
+</tbody>
+</table>
+<p>除了使用客户端模式之外，该 <code>detach-client</code> 命令还有一个 <code>-a</code> 标志，用于分离附加客户端以外的所有客户端。</p>
+<h3 id="_15">终止会话、窗口或窗格<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<p>按下 <code>C-b &amp;</code> 确认提示会终止（关闭）当前窗口。窗口中的所有窗格将同时被终止。 <code>C-b x</code> 仅终止活动窗格。这些命令绑定到 和 <code>kill-window</code> <code>kill-pane</code> 命令。</p>
+<p><code>kill-session</code> 命令将终止连接的会话及其所有窗口，并分离客户端。没有键 <code>kill-session</code> 绑定，但可以从命令提示符或树模式下的 <code>:</code> 提示符使用。</p>
+<p><code>kill-server</code> 直接终止tmux服务，慎用！</p>
+<h3 id="_16">重命名会话与窗口<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<p><code>C-b $</code> 将提示为附加的会话输入新名称。这将使用命令 <code>rename-session</code> 。同样， <code>C-b ,</code> 使用该 <code>rename-window</code> 命令提示输入当前窗口的新名称。</p>
+<h3 id="_17">交换和移动<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<p>tmux allows panes and windows to be swapped with the <code>swap-pane</code> and <code>swap-window</code> commands.</p>
+<p>为了便于交换，可以标记单个窗格。所有会话中都有一个标记的窗格。键绑定切换 <code>C-b m</code> 附加会话中当前窗口中的活动窗格是否为标记的窗格。 <code>C-b M</code> 完全清除标记的窗格，以便不标记任何窗格。标记的窗格由其边框的绿色背景显示，包含标记窗格的窗口在状态行中有一个 <code>M</code> 标志。</p>
+<p>标记窗格后，可以使用命令 <code>swap-pane</code> 将其与当前窗口中的活动窗格交换，或者可以使用该 <code>swap-window</code> 命令将包含标记窗格的窗口与当前窗换。例如，使用命令提示符：</p>
+<p>此外，还可以使用 <code>C-b {</code> 和 <code>C-b }</code> 键绑定与上方或下方的窗格交换窗格。</p>
+<p>移动窗口使用 <code>move-window</code> 命令或 <code>C-b .</code> 键绑定。按下将 <code>C-b .</code> 提示输入当前窗口的新索引。如果给定索引中已存在窗口，则会显示错误。可以使用 <code>-k</code> 标志替换现有窗口 - 将窗口移动到索引 999：</p>
+<div class="highlight"><pre><span></span><code>:move-window -kt 999
+</code></pre></div>
+<p>如果窗口列表中存在间隙，则可以使用 <code>-r</code> 标志将索引重新编号 <code>move-window</code> 为 。例如，这会将窗口列表 0， 1， 3， 999 更改为 0， 1， 2， 3：</p>
+<div class="highlight"><pre><span></span><code>:movew -r
+</code></pre></div>
+<h3 id="_18">调整窗格大小和缩放窗格<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<p>Panes may be resized in small steps with <code>C-b C-Left</code>, <code>C-b C-Right</code>, <code>C-b C-Up</code> and <code>C-b C-Down</code> and in larger steps with <code>C-b M-Left</code>, <code>C-b M-Right</code>, <code>C-b M-Up</code> and <code>C-b M-Down</code>. These use the <code>resize-pane</code> command.</p>
+<p>可以临时使单个窗格占用整个窗口 <code>C-b z</code> ，隐藏任何其他窗格。再次按下可将 <code>C-b z</code> 窗格和窗口布局恢复到原来的状态。这称为缩放和取消缩放。窗格已缩放的窗口在状态行中标有 。 <code>Z</code> 更改窗口中窗格的大小或位置的命令会自动取消缩放窗口。</p>
+<h3 id="_19">窗口布局<a class="headerlink" href="#_19" title="Permanent link">¶</a></h3>
+<p>窗口中的窗格可以自动排列成几个命名布局之一，这些布局可以在键绑定之间 <code>C-b Space</code> 旋转，也可以直接使用 <code>C-b M-1</code> ， <code>C-b M-2</code> 依此类推。</p>
+<p>可用的布局包括：</p>
+<table>
+<thead>
+<tr>
+<th>Name 名字</th>
+<th>Key 钥匙</th>
+<th>Description 描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>even-horizontal 均匀水平</td>
+<td><code>C-b M-1</code></td>
+<td>Spread out evenly across  <br>均匀分布</td>
+</tr>
+<tr>
+<td>even-vertical 均匀垂直</td>
+<td><code>C-b M-2</code></td>
+<td>Spread out evenly up and down  <br>上下均匀分布</td>
+</tr>
+<tr>
+<td>main-horizontal 主水平</td>
+<td><code>C-b M-3</code></td>
+<td>One large pane at the top, the rest spread out evenly across  <br>顶部有一个大窗格，其余部分均匀分布在</td>
+</tr>
+<tr>
+<td>main-vertical 主垂直</td>
+<td><code>C-b M-4</code></td>
+<td>One large pane on the left, the rest spread out evenly up and down  <br>左侧有一个大窗格，其余窗格均匀地上下展开</td>
+</tr>
+<tr>
+<td>tiled 平铺</td>
+<td><code>C-b M-5</code></td>
+<td>Tiled in the same number of rows as columns  <br>平铺的行数与列相同</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">复制和粘贴<a class="headerlink" href="#_20" title="Permanent link">¶</a></h3>
+<p>TMUX 有自己的复制和粘贴系统。复制的文本段称为粘贴缓冲区。使用复制模式复制文本，使用 输入 ， <code>C-b [</code> 最近复制的文本使用 粘贴到活动窗格中 <code>C-b ]</code> 。</p>
+<p>粘贴缓冲区可以命名，但默认情况下，它们由 tmux 指定名称，例如 <code>buffer0</code> 或 <code>buffer1</code> 。像这样的缓冲区称为自动缓冲区，最多保留 50 个 - 一旦有 50 个缓冲区，当添加另一个缓冲区时，最旧的缓冲区将被删除。如果为缓冲区指定名称，则称为命名缓冲区;无论有多少命名缓冲区，都不会删除。</p>
+<p>与命令提示符一样，复制模式使用类似于 emacs（1） 的键;但是，如果 OR <code>VISUAL</code> <code>EDITOR</code> 环境变量设置为包含 <code>vi</code> 的内容，则改用 vi（1） 样式的键。以下键是一些在复制模式下使用 emacs（1） 键的键：</p>
+<table>
+<thead>
+<tr>
+<th>Key 钥匙</th>
+<th>Action 行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Up</code>, <code>Down</code>, <code>Left</code>, <code>Right</code>  <br><code>Up</code> ， ， ， <code>Down</code> <code>Left</code> <code>Right</code></td>
+<td>Move the cursor 移动光标</td>
+</tr>
+<tr>
+<td><code>C-Space</code></td>
+<td>Start a selection 开始选择</td>
+</tr>
+<tr>
+<td><code>C-w</code></td>
+<td>Copy the selection and exit copy mode  <br>复制所选内容并退出复制模式</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>Exit copy mode 退出复制模式</td>
+</tr>
+<tr>
+<td><code>C-g</code></td>
+<td>Stop selecting without copying, or stop searching  <br>停止选择而不复制，或停止搜索</td>
+</tr>
+<tr>
+<td><code>C-a</code></td>
+<td>Move the cursor to the start of the line  <br>将光标移动到行首</td>
+</tr>
+<tr>
+<td><code>C-e</code></td>
+<td>Move the cursor to the end of the line  <br>将光标移动到行尾</td>
+</tr>
+<tr>
+<td><code>C-r</code></td>
+<td>Search interactively backwards  <br>以交互方式向后搜索</td>
+</tr>
+<tr>
+<td><code>M-f</code></td>
+<td>Move the cursor to the next word  <br>将光标移动到下一个单词</td>
+</tr>
+<tr>
+<td><code>M-b</code></td>
+<td>Move the cursor to the previous word  <br>将光标移动到上一个单词</td>
+</tr>
+</tbody>
+</table>
+<p>复制某些文本后，可以使用缓冲区模式粘贴 <code>C-b ]</code> 最新的文本或粘贴较旧的缓冲区，并使用 . <code>C-b =</code> 缓冲区模式类似于客户端模式和树模式，并提供缓冲区列表及其内容的预览。除了树模式和客户端模式下使用的导航和标记键外，缓冲区模式还支持以下键：</p>
+<table>
+<thead>
+<tr>
+<th>Key 钥匙</th>
+<th>Function 功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Paste selected buffer 粘贴所选缓冲区</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>Paste selected buffer, same as <code>Enter</code>  <br>粘贴所选缓冲区，与 <code>Enter</code></td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>Paste tagged buffers 粘贴标记的缓冲区</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Delete selected buffer 删除选定的缓冲区</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Delete tagged buffers 删除标记的缓冲区</td>
+</tr>
+</tbody>
+</table>
+<p>A buffer may be renamed using the <code>set-buffer</code> command. The <code>-b</code> flag gives the existing buffer name and <code>-n</code> the new name. This converts it into a named buffer. For example, to rename <code>buffer0</code> to <code>mybuffer</code> from the command prompt:\
+可以使用该 <code>set-buffer</code> 命令重命名缓冲区。该 <code>-b</code> 标志提供现有缓冲区名称和 <code>-n</code> 新名称。这会将其转换为命名缓冲区。例如，要从命令提示符重命名 <code>buffer0</code> 为 <code>mybuffer</code> ：</p>
+<div class="highlight"><pre><span></span><code>:setb -bbuffer0 -nmybuffer
+</code></pre></div>
+<p><code>set-buffer</code> can also be used to create buffers. To create a buffer called <code>foo</code> with text <code>bar</code>:\
+<code>set-buffer</code> 也可用于创建缓冲区。要创建用文本 <code>bar</code> 调用 <code>foo</code> 的缓冲区：</p>
+<div class="highlight"><pre><span></span><code>:setb -bfoo bar
+</code></pre></div>
+<p><code>load-buffer</code> will load a buffer from a file:\
+<code>load-buffer</code> 将从文件加载缓冲区：</p>
+<div class="highlight"><pre><span></span><code>:loadb -bbuffername ~/a/file
+</code></pre></div>
+<p><code>set-buffer</code> or <code>load-buffer</code> without <code>-b</code> creates an automatic buffer.\
+<code>set-buffer</code> 或不 <code>load-buffer</code> 创建 <code>-b</code> 自动缓冲区。</p>
+<p>An existing buffer can be saved to a file with <code>save-buffer</code>:\
+现有缓冲区可以保存到文件中 <code>save-buffer</code> ：</p>
+<div class="highlight"><pre><span></span><code>:saveb -bbuffer0 ~/saved_buffer
+</code></pre></div>
+<h3 id="_21">查找窗口和窗格<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
+<p><code>C-b f</code> prompts for some text and then enters tree mode with a filter to show only panes where that text appears in the visible content or title of the pane or in the window name. If panes are found, only those panes appear in the tree, and the text <code>filter: active</code> is shown above the preview. If no panes are found, all panes are shown in the tree and the text <code>filter: no matches</code> appears above the preview.</p>
+<h3 id="_22">使用鼠标<a class="headerlink" href="#_22" title="Permanent link">¶</a></h3>
+<p>tmux has rich support for the mouse. It can be used to change the active pane or window, to resize panes, to copy text, or to choose items from menus.\
+TMUX 对鼠标有丰富的支持。它可用于更改活动窗格或窗口、调整窗格大小、复制文本或从菜单中选择项目。</p>
+<p>Support for the mouse is enabled with the <code>mouse</code> option; options and the configuration file are described in detail in the next section. To turn the mouse on from the command prompt, use the <code>set-option</code> command:\
+使用该 <code>mouse</code> 选项启用对鼠标的支持;选项和配置文件将在下一节中详细介绍。若要从命令提示符打开鼠标，请使用 <code>set-option</code> 以下命令：</p>
+<div class="highlight"><pre><span></span><code>:set -g mouse on
+</code></pre></div>
+<p>Once the mouse is enabled:
+启用鼠标后：</p>
+<p><a class="glightbox" href="https://vip2.loli.io/2023/10/06/d2wjIV48BbHSxqv.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="![](httpsgithub.comtmuxtmuxwikiimagestmux_pane_menu.png)" src="https://vip2.loli.io/2023/10/06/d2wjIV48BbHSxqv.png"></a></p>
+<ul>
+<li>Pressing the left button on a pane will make that pane the active pane.\
+  按窗格上的左按钮将使该窗格成为活动窗格。</li>
+<li>Pressing the left button on a window name on the status line will make that the current window.\
+  在状态行上的窗口名称上按左键将使该窗口成为当前窗口。</li>
+<li>Dragging with the left button on a pane border resizes the pane.\
+  在窗格边框上使用左键拖动可调整窗格大小。</li>
+<li>Dragging with the left button inside a pane selects text; the selected text is copied when the mouse is released.\
+  在窗格中用左键拖动可选择文本;释放鼠标时，将复制所选文本。</li>
+<li>Pressing the right button on a pane opens a menu with various commands. When the mouse button is released, the selected command is run with the pane as target. Each menu item also has a key shortcut shown in brackets.\
+  在窗格中按右键将打开一个包含各种命令的菜单。释放鼠标按钮时，将运行所选命令，并将窗格作为目标。每个菜单项还有一个显示在括号中的快捷键。</li>
+<li>Pressing the right button on a window or on the session name on the status line opens a similar menu for the window or session.\
+  在窗口或状态行上的会话名称上按右键可为窗口或会话打开类似的菜单。</li>
+</ul>
+<h2 id="tmux_3">配置tmux<a class="headerlink" href="#tmux_3" title="Permanent link">¶</a></h2>
+<h4 id="_23">参考配置文件:<a class="headerlink" href="#_23" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code># -----------------------------------------------------------------------------
+# Tmux 基本配置 - 要求 Tmux &gt;= 2.3
+# 如果不想使用插件，只需要将此节的内容写入 ~/.tmux.conf 即可
+# -----------------------------------------------------------------------------
+
+# C-b 和 VIM 冲突，修改 Prefix 组合键为 Control-Z，按键距离近
+set -g prefix C-z
+
+set -g base-index         1     # 窗口编号从 1 开始计数
+set -g display-panes-time 10000 # PREFIX-Q 显示编号的驻留时长，单位 ms
+set -g mouse              on    # 开启鼠标
+set -g pane-base-index    1     # 窗格编号从 1 开始计数
+set -g renumber-windows   on    # 关掉某个窗口后，编号重排
+
+setw -g allow-rename      off   # 禁止活动进程修改窗口名
+setw -g automatic-rename  off   # 禁止自动命名新窗口
+setw -g mode-keys         vi    # 进入复制模式的时候使用 vi 键位（默认是 EMACS）
+
+# -----------------------------------------------------------------------------
+# 使用插件 - via tpm
+#   1. 执行 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#   2. 执行 bash ~/.tmux/plugins/tpm/bin/install_plugins
+# -----------------------------------------------------------------------------
+
+setenv -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins'
+
+# 推荐的插件（请去每个插件的仓库下读一读使用教程）
+set -g @plugin 'seebi/tmux-colors-solarized'
+set -g @plugin 'tmux-plugins/tmux-pain-control'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tpm'
+
+# tmux-resurrect
+set -g @resurrect-dir '~/.tmux/resurrect'
+
+# tmux-prefix-highlight
+set -g status-right '#{prefix_highlight} #H | %a %Y-%m-%d %H:%M'
+set -g @prefix_highlight_show_copy_mode 'on'
+set -g @prefix_highlight_copy_mode_attr 'fg=white,bg=blue'
+
+# 初始化 TPM 插件管理器 (放在配置文件的最后)
+run '~/.tmux/plugins/tpm/tpm'
+
+# -----------------------------------------------------------------------------
+# 结束
+# -----------------------------------------------------------------------------
+</code></pre></div>
+<h2 id="_24">常用配置更改<a class="headerlink" href="#_24" title="Permanent link">¶</a></h2>
+<h2 id="_25">其它功能<a class="headerlink" href="#_25" title="Permanent link">¶</a></h2>
+<p>tmux has a large set of features and commands not mentioned in this document, many allowing powerful scripting. Here is a list of some that may be worth further reading:</p>
+<ul>
+<li>Alerts: <code>monitor-activity</code>, <code>monitor-bell</code>, <code>monitor-silence</code>, <code>activity-action</code>, <code>bell-action</code> and other options.</li>
+<li>Options for individual session, windows and panes.</li>
+<li>Moving panes with <code>join-pane</code> and <code>break-pane</code>.</li>
+<li>Sending keys to panes with <code>send-keys</code>.</li>
+<li>The command prompt <code>history-file</code> option.</li>
+<li>Saved layout strings with <code>select-layout</code>.</li>
+<li>Command sequences (separated by <code>;</code>): <code>select-window; kill-window</code>.</li>
+<li>Configuration file syntax: <code>{}</code>, <code>%if</code> and so on.</li>
+<li>Mouse key bindings: <code>MouseDown1Pane</code> and so on.</li>
+<li>Locking: <code>lock-command</code>, <code>lock-after-time</code> and other options.</li>
+<li>Capturing pane content with <code>capture-pane</code> and piping with <code>pipe-pane</code>.</li>
+<li>Linking windows: the <code>link-window</code> command.</li>
+<li>Session groups: the <code>-t</code> flag to <code>new-session</code>.</li>
+<li>Respawing window and panes with <code>respawn-window</code> and <code>respawn-pane</code>.</li>
+<li>Custom menus with the <code>display-menu</code> command and custom prompts with <code>command-prompt</code> and <code>confirm-before</code>.</li>
+<li>Different key tables: <code>bind-key</code> and the <code>-T</code> flag to <code>switch-client</code>.</li>
+<li>Empty panes: the <code>split-window</code> with an empty command and <code>-I</code> to <code>display-message</code>.</li>
+<li>Hooks: <code>set-hook</code> and <code>show-hooks</code>.</li>
+<li>Synchronization for scripts with <code>wait-for</code>.</li>
+</ul></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Mac%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mac终端配置" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Mac终端配置
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B0%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/" class="md-footer__link md-footer__link--next" aria-label="Next: 服务器新用户配置" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                服务器新用户配置
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Yingwei Guo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
