@@ -1,17 +1,30 @@
 site_name: YingweiGuo's Notes
 
 theme:
+  icon:
+    repo: fontawesome/brands/github-alt
+
+#  logo: assets/logo.png  :pushpin:
+#  favicon: images/favicon.png
   features:
     - navigation.tabs
     - navigation.path
-    - toc.integrate
     - navigation.top
     - navigation.instant
-    - navigation.sections
+#    - navigation.sections
     - toc.follow
-    - toc.integrate
+#    - toc.integrate
+    - announce.dismiss
+    - navigation.footer
   name: material
+  custom_dir: overrides
+  logo: assets/images/favicon.png
   palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -26,28 +39,56 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+plugins:
+  - tags:
+      tags_file: tags.md
+  # 视频插件
+  - mkdocs-video:
+      is_video: true
+      video_muted: false
+      video_controls: true
+      video_autoplay: false
+  # 图片放大
+  - glightbox:
+      effect: zoom
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - nonzoom
+  # 更新时间显示
+  - git-revision-date-localized:
+      enable_creation_date: true
+#  - meta
 
 
 
 #nav: 
 #  - Home: index.md
-#  - Programing:
-#    - Programing/index.md
-#    - Linux: Programing/Linux/linux.md
-#    - Python: 
-#      - Basic: Programing/Python/basic.md
-#  - Bioinfomatics:
-#    - Bioinfomatics/index.md
-#    - Knowledge: 
-#      - Evolution: Bioinfomatics/Knowledge/Evolution/yanhua.md
-#    - Technology: 
-#      - Format: Bioinfomatics/Knowledge/Technology/format.md
-#  - About: about.md
+#  - Programing: 
+#    - Linux: 01.programing/01.Linux
+#    - Python: 01.programing/02.Python
+#  - Bioinfomatics: 02.Bioinfomatics
+#  - Research: 03.Research
+#  - Tags: tags.md
+#  - About: 04.About/about.md
+
+
 
 extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
   version:
-    provider: mike
-    
+    provider: mike  # 版本控制
+
+repo_url: https://github.com/guoyingwei6/Mynotes
+repo_name: guoyingwei6/Mynotes
+copyright: Copyright &copy; 2023 Yingwei Guo
+
 markdown_extensions:
   - admonition
   - codehilite:
@@ -73,3 +114,10 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
+  - attr_list
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:material.extensions.emoji.twemoji
+#      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+extra_javascript:
+  # 鼠标点击特效
+  - https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js
