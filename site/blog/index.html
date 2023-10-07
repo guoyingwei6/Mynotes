@@ -1777,42 +1777,39 @@
 </div>
 </div>
 <h5 id="embedded-content"><a class="toclink" href="markdown-extention-features/#embedded-content">Embedded content</a></h5>
-<p>```</p>
+<div class="highlight"><span class="filename">Content tabs in admonition</span><pre><span></span><code>!!! example
+
+    === &quot;Unordered List&quot;
+
+        ``` markdown
+        * Sed sagittis eleifend rutrum
+        * Donec vitae suscipit est
+        * Nulla tempor lobortis orci
+        ```
+
+    === &quot;Ordered List&quot;
+
+        ``` markdown
+        1. Sed sagittis eleifend rutrum
+        2. Donec vitae suscipit est
+        3. Nulla tempor lobortis orci
+        ```
+</code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Unordered List</label><label for="__tabbed_3_2">Ordered List</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>markdown
-* Sed sagittis eleifend rutrum
-* Donec vitae suscipit est
-* Nulla tempor lobortis orci</code></p>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><span class="k">*</span><span class="w"> </span>Sed sagittis eleifend rutrum
+<span class="k">*</span><span class="w"> </span>Donec vitae suscipit est
+<span class="k">*</span><span class="w"> </span>Nulla tempor lobortis orci
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><code>markdown
-1. Sed sagittis eleifend rutrum
-2. Donec vitae suscipit est
-3. Nulla tempor lobortis orci</code></p>
-</div>
-</div>
-</div>
-</div>
-<p>``` title="Content tabs in admonition"</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Unordered List</label><label for="__tabbed_4_2">Ordered List</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><code>markdown
-* Sed sagittis eleifend rutrum
-* Donec vitae suscipit est
-* Nulla tempor lobortis orci</code></p>
-</div>
-<div class="tabbed-block">
-<p><code>markdown
-1. Sed sagittis eleifend rutrum
-2. Donec vitae suscipit est
-3. Nulla tempor lobortis orci</code></p>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><span class="k">1.</span> Sed sagittis eleifend rutrum
+<span class="k">2.</span> Donec vitae suscipit est
+<span class="k">3.</span> Nulla tempor lobortis orci
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -1820,7 +1817,7 @@
 <h3 id="admonitions"><a class="toclink" href="markdown-extention-features/#admonitions">Admonitions</a></h3>
 <h4 id="demo"><a class="toclink" href="markdown-extention-features/#demo">Demo</a></h4>
 <p>mkdocs支持Admonitions，在网页上显示类似警告信息。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">渲染效果</label><label for="__tabbed_5_2">源代码</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">渲染效果</label><label for="__tabbed_4_2">源代码</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <details class="note" open="open">
@@ -1829,12 +1826,9 @@
 </details>
 </div>
 <div class="tabbed-block">
-<p>``` </p>
-<details class="note" open="open">
-<summary>Admonition</summary>
-<p>Action is the antidote to despair.</p>
-</details>
-<p>```</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>???+ note &quot;Admonition&quot;
+    Action is the antidote to despair.
+</code></pre></div>
 </div>
 </div>
 </div>

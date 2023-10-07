@@ -107,7 +107,7 @@ Code blocks are one of the primary targets to be grouped, and can be considered 
 
 #### Embedded content
 
-```
+``` title="Content tabs in admonition"
 !!! example
 
     === "Unordered List"
@@ -126,7 +126,7 @@ Code blocks are one of the primary targets to be grouped, and can be considered 
         3. Nulla tempor lobortis orci
         ```
 
-``` title="Content tabs in admonition"
+``` 
 
 !!! example
 
