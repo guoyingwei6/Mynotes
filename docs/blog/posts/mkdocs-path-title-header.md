@@ -1,7 +1,7 @@
 ---
 date: 2023-10-07
 categories:
-  - Usage
+  - Tutorial
 slug: post-and-notes-url-title-header-format
 #title: title
 ---
