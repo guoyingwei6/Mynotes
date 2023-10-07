@@ -1658,7 +1658,7 @@
         
   
   <span class="md-ellipsis">
-    随笔
+    教程
   </span>
   
 
@@ -1962,7 +1962,7 @@
 <span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="vimrc">配置~/.vimrc<a class="headerlink" href="#vimrc" title="Permanent link">¶</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2008,21 +2008,21 @@ map<span class="w"> </span>&lt;F11&gt;<span class="w"> </span>:set<span class="w
 </code></pre></div></td></tr></table></div>
 <h2 id="miniconda">安装miniconda<a class="headerlink" href="#miniconda" title="Permanent link">¶</a></h2>
 <h3 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/miniconda3
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/miniconda3
 wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh<span class="w"> </span>-O<span class="w"> </span>~/miniconda3/miniconda.sh
 bash<span class="w"> </span>~/miniconda3/miniconda.sh<span class="w"> </span>-b<span class="w"> </span>-u<span class="w"> </span>-p<span class="w"> </span>~/miniconda3
 rm<span class="w"> </span>-rf<span class="w"> </span>~/miniconda3/miniconda.sh
 </code></pre></div>
 <h3 id="_3">初始化<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>~/miniconda3/bin/conda<span class="w"> </span>init<span class="w"> </span>bash
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>~/miniconda3/bin/conda<span class="w"> </span>init<span class="w"> </span>bash
 </code></pre></div>
 <h3 id="_4">配置清华源<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>show_channel_urls<span class="w"> </span>yes
 </code></pre></div>
 <h2 id="github">GitHub同步配置文件<a class="headerlink" href="#github" title="Permanent link">¶</a></h2>
 <h3 id="github_1">配置GitHub账号<a class="headerlink" href="#github_1" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"guoyingwei_aliyun"</span>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"guoyingwei_aliyun"</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"guoyingwei6@outlook.com"</span>
 ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"guoyingwei6@outlook.com"</span>
 
@@ -2033,7 +2033,7 @@ cat<span class="w"> </span>~/.ssh/id_ed25519.pub
 <span class="c1"># 把公钥添加到GitHub &gt; Setting &gt; SSH and GPG keys</span>
 </code></pre></div>
 <h3 id="_5">远程和本地配置文件同步<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:guoyingwei6/dotfiles.git
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:guoyingwei6/dotfiles.git
 <span class="nb">cd</span><span class="w"> </span>dotfiles
 /usr/bin/cp<span class="w"> </span>-f<span class="w"> </span>~/.bashrc<span class="w"> </span>.bashrc
 /usr/bin/cp<span class="w"> </span>-f<span class="w"> </span>~/.vimrc<span class="w"> </span>.vimrc
@@ -2042,7 +2042,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 git<span class="w"> </span>push
 </code></pre></div>
 <h3 id="cron">利用cron每天自动备份配置文件<a class="headerlink" href="#cron" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>vi<span class="w"> </span>syn.sh
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>vi<span class="w"> </span>syn.sh
 <span class="c1"># syn.sh写入下列命令:</span>
 /usr/bin/cp<span class="w"> </span>-f<span class="w"> </span>~/.bashrc<span class="w"> </span>/home/guoyingwei/dotfiles/.bashrc
 /usr/bin/cp<span class="w"> </span>-f<span class="w"> </span>~/.vimrc<span class="w"> </span>/home/guoyingwei/dotfiles/.vimrc
@@ -2214,7 +2214,7 @@ crontab<span class="w"> </span>-e
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>

@@ -1534,7 +1534,7 @@
         
   
   <span class="md-ellipsis">
-    随笔
+    教程
   </span>
   
 
@@ -1641,7 +1641,7 @@
 <p><code>-t</code>参数后面跟 我们转置好的tped和tfam文件的前缀</p>
 <p><code>-p</code>给他表型文件，这个文件是自己做的，基本格式就是 FID IID trait 三列</p>
 <p>比如我们想做高原适应性，可以这样
-</p><div class="highlight"><pre><span></span><code>TIB_familyid1 TIB_individulid1 1
+</p><div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>TIB_familyid1 TIB_individulid1 1
 TIB_familyid2 TIB_individulid2 1
 non_TIB_familyid1 non_TIB_individulid1 0
 non_TIB_familyid2 non_TIB_individulid2 0
@@ -1656,7 +1656,7 @@ non_TIB_familyid2 non_TIB_individulid2 0
  这时候你会发现前面几个文件他们的位置（就是第二列）都是0，，是因为芯片上的某些点没有在染色体上，这些我们就直接不要就好了，所以awk '$2!=0' 意思是只要第二列不等于0 的  把它重定向到一个文件中gwas.assoc.txt
  ppt中他是分开写了，我合并到一起了，你可以cut -d" " -f1-4 need_samples.tped |less 这样暂时查看一下输出内容，每一步你都可以跟一个less  ，，cut -d" " -f1-4 need_samples.tped |paste - gwas.trait.ps |less  ，，一步一步看下你就知道了。</p>
 <p>8.打开R studio
-</p><div class="highlight"><pre><span></span><code>library(qqman)
+</p><div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>library(qqman)
 data &lt;- read.table("C:/Users/Administrator/Desktop/gwas.assoc.txt",header = T) # 读取数去存到data变量里面
 colorset&lt;-c("blue4", "orange3")  # 创建一个颜色集合
 manhattan(data, CHR = "CHR", BP = "bp", SNP = "SNP", p = "P-VALUE", col = colorset)   # 画曼哈顿图
@@ -1763,7 +1763,7 @@ manhattan(data, CHR = "CHR", BP = "bp", SNP = "SNP", p = "P-VALUE", col = colors
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>

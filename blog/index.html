@@ -1451,6 +1451,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    扩展markdown功能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     第一篇博客
   </a>
@@ -1572,7 +1579,7 @@
         
   
   <span class="md-ellipsis">
-    随笔
+    教程
   </span>
   
 
@@ -1624,6 +1631,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    扩展markdown功能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     第一篇博客
   </a>
@@ -1651,12 +1665,80 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2023-10-07 00:00:00">October 7, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/" class="md-meta__link">教程</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="markdown"><a class="toclink" href="markdown-extention-features/">扩展markdown功能</a></h2>
+<p>mkdocs支持Admonitions，在网页上显示类似警告信息⚠️。</p>
+<h3 id="_1"><a class="toclink" href="markdown-extention-features/#_1">一个例子</a></h3>
+<p>Adding a + after the ??? token renders the block expanded:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Block1</label><label for="__tabbed_1_2">Block2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Admonition</span><pre><span></span><code>???+ note 
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<details class="note" open="open">
+<summary>Admonition</summary>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.</p>
+</details>
+</div>
+</div>
+</div>
+<p>$$</p>
+<h3 id="supported-types"><a class="toclink" href="markdown-extention-features/#supported-types">Supported types</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p>
+</div>
+    <nav class="md-post__action">
+      <a href="markdown-extention-features/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-10-06 00:00:00">October 6, 2023</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="category/" class="md-meta__link">随笔</a></li>
+              <a href="category/" class="md-meta__link">教程</a></li>
         
         
           
@@ -1739,13 +1821,13 @@
         
         
           
-          <a href="category/" class="md-footer__link md-footer__link--next" aria-label="Next: 随笔" rel="next">
+          <a href="category/" class="md-footer__link md-footer__link--next" aria-label="Next: 教程" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                随笔
+                教程
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1782,7 +1864,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
