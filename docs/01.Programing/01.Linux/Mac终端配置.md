@@ -1,8 +1,8 @@
 # Mac终端配置
 
-```zsh
+```zsh linenums="1"
 
-# 安装插件
+# 安装插件 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.zsh/plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins
 # 启用插件

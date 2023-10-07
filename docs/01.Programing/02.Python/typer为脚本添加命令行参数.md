@@ -2,7 +2,7 @@
 tags:
   - python
 ---
-```python
+```python linenums="1"
 import typer
 
 

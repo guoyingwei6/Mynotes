@@ -1586,7 +1586,7 @@
         
   
   <span class="md-ellipsis">
-    随笔
+    教程
   </span>
   
 
@@ -1688,7 +1688,7 @@
   <h1>Mapping</h1>
 
 <div><h2 id="_1">设置变量<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># /bin/bash</span>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># /bin/bash</span>
 
 <span class="c1"># define variable</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">sm</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span>
@@ -1697,7 +1697,7 @@
 <span class="nb">export</span><span class="w"> </span><span class="nv">ref</span><span class="o">=</span>Oar4.0_add_CPY.fa
 </code></pre></div>
 <h2 id="mapping-and-sort">mapping and sort<a class="headerlink" href="#mapping-and-sort" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># mapping and sort </span>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># mapping and sort </span>
 bwa<span class="w"> </span>mem<span class="w"> </span><span class="se">\</span>
 -t<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
 -R<span class="w"> </span><span class="s1">'@RG\tID:'</span><span class="si">${</span><span class="nv">sm</span><span class="si">}</span><span class="s1">'\tLB:'</span><span class="si">${</span><span class="nv">sm</span><span class="si">}</span><span class="s1">'\tPL:ILLUMINA\tSM:'</span><span class="si">${</span><span class="nv">sm</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
@@ -1707,7 +1707,7 @@ bwa<span class="w"> </span>mem<span class="w"> </span><span class="se">\</span>
 <span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w"> </span>-@<span class="w"> </span><span class="m">4</span><span class="w"> </span>-o<span class="w"> </span><span class="si">${</span><span class="nv">sm</span><span class="si">}</span>.sort.bam<span class="w"> </span>-
 </code></pre></div>
 <h2 id="pcr">去除PCR重复<a class="headerlink" href="#pcr" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># dedup</span>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># dedup</span>
 gatk<span class="w"> </span>MarkDuplicates<span class="w"> </span><span class="se">\</span>
 --spark-runner<span class="w"> </span>LOCAL<span class="w"> </span><span class="se">\</span>
 -I<span class="w"> </span><span class="si">${</span><span class="nv">sm</span><span class="si">}</span>.sort.bam<span class="w"> </span><span class="se">\</span>
@@ -1718,7 +1718,7 @@ gatk<span class="w"> </span>MarkDuplicates<span class="w"> </span><span class="s
 --REMOVE_DUPLICATES<span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
 <p>或者用<code>picard</code>也可以：
-</p><div class="highlight"><pre><span></span><code><span class="c1"># dedup</span>
+</p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># dedup</span>
 /stor9000/apps/appsoftware/BioSoftware/bin/java<span class="w"> </span><span class="se">\</span>
 -Xmx10g<span class="w"> </span><span class="se">\</span>
 -Djava.io.tmpdir<span class="o">=</span>/stor9000/apps/users/NWSUAF/2015010726/files/tmp<span class="w"> </span><span class="se">\</span>
@@ -1836,7 +1836,7 @@ MarkDuplicates<span class="w"> </span><span class="se">\</span>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>

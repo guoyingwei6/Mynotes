@@ -1784,7 +1784,7 @@
         
   
   <span class="md-ellipsis">
-    随笔
+    教程
   </span>
   
 
@@ -2101,7 +2101,7 @@
 </ul>
 <h2 id="tmux_1">交互式使用tmux<a class="headerlink" href="#tmux_1" title="Permanent link">¶</a></h2>
 <h3 id="_2">创建新会话<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>tmux new -s mysession
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>tmux new -s mysession
 </code></pre></div>
 <p><code>-s</code>参数指定会话名字</p>
 <h3 id="_3">状态栏<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
@@ -2115,14 +2115,14 @@
 <h3 id="_6">命令提示符<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>tmux has an interactive command prompt. This can be opened by pressing <code>C-b :</code> and appears instead of the status line</p>
 <h3 id="_7">连接和分离会话<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code>tmux attach -t mysession
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>tmux attach -t mysession
 </code></pre></div>
 <p><code>-d</code>分离附加到会话的任何其他客户端：</p>
-<div class="highlight"><pre><span></span><code>tmux attach -dt mysession
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>tmux attach -dt mysession
 </code></pre></div>
 <h3 id="_8">显示会话列表<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p>The <code>list-session</code> command (alias <code>ls</code>) shows a list of available sessions that can be attached. This shows four sessions called <code>1</code>, <code>2</code>, <code>myothersession</code> and <code>mysession</code>:</p>
-<div class="highlight"><pre><span></span><code>$ tmux ls
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>$ tmux ls
 1: 3 windows (created Sat Feb 22 11:44:51 2020)
 2: 1 windows (created Sat Feb 22 11:44:51 2020)
 myothersession: 2 windows (created Sat Feb 22 11:44:51 2020)
@@ -2130,12 +2130,12 @@ mysession: 1 windows (created Sat Feb 22 11:44:51 2020)
 </code></pre></div>
 <h3 id="tmux_2">终止所有tmux会话<a class="headerlink" href="#tmux_2" title="Permanent link">¶</a></h3>
 <p>在任意会话的命令提示符下，输入kill-server就会把所有的tmux会话终止，慎用！</p>
-<div class="highlight"><pre><span></span><code>kill-server
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>kill-server
 </code></pre></div>
 <h3 id="_9">创建新窗口<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <p>A new window can be created in an attached session with the <code>C-b c</code> key binding which runs the <code>new-window</code> command. The new window is created at the first available index - so the second window will have index 1. The new window becomes the current window of the session.</p>
 <p>If there are any gaps in the window list, they are filled by new windows. So if there are windows with indexes 0 and 2, the next new window will be created as index 1.</p>
-<div class="highlight"><pre><span></span><code>:neww -dn mynewwindow
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:neww -dn mynewwindow
 </code></pre></div>
 <ul>
 <li><code>-d</code> 标志创建窗口，但不使其成为当前窗口</li>
@@ -2143,10 +2143,10 @@ mysession: 1 windows (created Sat Feb 22 11:44:51 2020)
 </ul>
 <p><code>-t</code> 标志指定窗口的目标。命令目标具有特殊的语法，但对于 <code>new-window</code> 简单的使用，只需提供窗口索引就足够了。这将在索引 999 处创建一个窗口：
  </p>
-<div class="highlight"><pre><span></span><code>:neww -t 999
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:neww -t 999
 </code></pre></div>
 <p>可以在新窗口中运行的命令，其方式与 <code>new-window</code> 相同 <code>new-session</code> 。例如，要创建一个运行 top（1） 的新窗口：</p>
-<div class="highlight"><pre><span></span><code>:neww top
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:neww top
 </code></pre></div>
 <h3 id="_10">拆分窗口<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
 <p>通过拆分窗口来创建面板。这是使用默认情况下绑定到两个键的 <code>split-window</code> 命令完成的：</p>
@@ -2334,10 +2334,10 @@ mysession: 1 windows (created Sat Feb 22 11:44:51 2020)
 <p>标记窗格后，可以使用命令 <code>swap-pane</code> 将其与当前窗口中的活动窗格交换，或者可以使用该 <code>swap-window</code> 命令将包含标记窗格的窗口与当前窗换。例如，使用命令提示符：</p>
 <p>此外，还可以使用 <code>C-b {</code> 和 <code>C-b }</code> 键绑定与上方或下方的窗格交换窗格。</p>
 <p>移动窗口使用 <code>move-window</code> 命令或 <code>C-b .</code> 键绑定。按下将 <code>C-b .</code> 提示输入当前窗口的新索引。如果给定索引中已存在窗口，则会显示错误。可以使用 <code>-k</code> 标志替换现有窗口 - 将窗口移动到索引 999：</p>
-<div class="highlight"><pre><span></span><code>:move-window -kt 999
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:move-window -kt 999
 </code></pre></div>
 <p>如果窗口列表中存在间隙，则可以使用 <code>-r</code> 标志将索引重新编号 <code>move-window</code> 为 。例如，这会将窗口列表 0， 1， 3， 999 更改为 0， 1， 2， 3：</p>
-<div class="highlight"><pre><span></span><code>:movew -r
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:movew -r
 </code></pre></div>
 <h3 id="_18">调整窗格大小和缩放窗格<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
 <p>Panes may be resized in small steps with <code>C-b C-Left</code>, <code>C-b C-Right</code>, <code>C-b C-Up</code> and <code>C-b C-Down</code> and in larger steps with <code>C-b M-Left</code>, <code>C-b M-Right</code>, <code>C-b M-Up</code> and <code>C-b M-Down</code>. These use the <code>resize-pane</code> command.</p>
@@ -2468,21 +2468,21 @@ mysession: 1 windows (created Sat Feb 22 11:44:51 2020)
 </table>
 <p>A buffer may be renamed using the <code>set-buffer</code> command. The <code>-b</code> flag gives the existing buffer name and <code>-n</code> the new name. This converts it into a named buffer. For example, to rename <code>buffer0</code> to <code>mybuffer</code> from the command prompt:\
 可以使用该 <code>set-buffer</code> 命令重命名缓冲区。该 <code>-b</code> 标志提供现有缓冲区名称和 <code>-n</code> 新名称。这会将其转换为命名缓冲区。例如，要从命令提示符重命名 <code>buffer0</code> 为 <code>mybuffer</code> ：</p>
-<div class="highlight"><pre><span></span><code>:setb -bbuffer0 -nmybuffer
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:setb -bbuffer0 -nmybuffer
 </code></pre></div>
 <p><code>set-buffer</code> can also be used to create buffers. To create a buffer called <code>foo</code> with text <code>bar</code>:\
 <code>set-buffer</code> 也可用于创建缓冲区。要创建用文本 <code>bar</code> 调用 <code>foo</code> 的缓冲区：</p>
-<div class="highlight"><pre><span></span><code>:setb -bfoo bar
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:setb -bfoo bar
 </code></pre></div>
 <p><code>load-buffer</code> will load a buffer from a file:\
 <code>load-buffer</code> 将从文件加载缓冲区：</p>
-<div class="highlight"><pre><span></span><code>:loadb -bbuffername ~/a/file
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:loadb -bbuffername ~/a/file
 </code></pre></div>
 <p><code>set-buffer</code> or <code>load-buffer</code> without <code>-b</code> creates an automatic buffer.\
 <code>set-buffer</code> 或不 <code>load-buffer</code> 创建 <code>-b</code> 自动缓冲区。</p>
 <p>An existing buffer can be saved to a file with <code>save-buffer</code>:\
 现有缓冲区可以保存到文件中 <code>save-buffer</code> ：</p>
-<div class="highlight"><pre><span></span><code>:saveb -bbuffer0 ~/saved_buffer
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:saveb -bbuffer0 ~/saved_buffer
 </code></pre></div>
 <h3 id="_21">查找窗口和窗格<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
 <p><code>C-b f</code> prompts for some text and then enters tree mode with a filter to show only panes where that text appears in the visible content or title of the pane or in the window name. If panes are found, only those panes appear in the tree, and the text <code>filter: active</code> is shown above the preview. If no panes are found, all panes are shown in the tree and the text <code>filter: no matches</code> appears above the preview.</p>
@@ -2491,7 +2491,7 @@ mysession: 1 windows (created Sat Feb 22 11:44:51 2020)
 TMUX 对鼠标有丰富的支持。它可用于更改活动窗格或窗口、调整窗格大小、复制文本或从菜单中选择项目。</p>
 <p>Support for the mouse is enabled with the <code>mouse</code> option; options and the configuration file are described in detail in the next section. To turn the mouse on from the command prompt, use the <code>set-option</code> command:\
 使用该 <code>mouse</code> 选项启用对鼠标的支持;选项和配置文件将在下一节中详细介绍。若要从命令提示符打开鼠标，请使用 <code>set-option</code> 以下命令：</p>
-<div class="highlight"><pre><span></span><code>:set -g mouse on
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>:set -g mouse on
 </code></pre></div>
 <p>Once the mouse is enabled:
 启用鼠标后：</p>
@@ -2512,7 +2512,7 @@ TMUX 对鼠标有丰富的支持。它可用于更改活动窗格或窗口、调
 </ul>
 <h2 id="tmux_3">配置tmux<a class="headerlink" href="#tmux_3" title="Permanent link">¶</a></h2>
 <h4 id="_23">参考配置文件:<a class="headerlink" href="#_23" title="Permanent link">¶</a></h4>
-<div class="highlight"><pre><span></span><code># -----------------------------------------------------------------------------
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code># -----------------------------------------------------------------------------
 # Tmux 基本配置 - 要求 Tmux &gt;= 2.3
 # 如果不想使用插件，只需要将此节的内容写入 ~/.tmux.conf 即可
 # -----------------------------------------------------------------------------
@@ -2688,7 +2688,7 @@ run '~/.tmux/plugins/tpm/tpm'
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.instant", "toc.follow", "announce.dismiss", "navigation.footer", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
