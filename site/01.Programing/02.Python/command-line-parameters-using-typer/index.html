@@ -12,7 +12,7 @@
         <link rel="prev" href="../../01.Linux/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%96%B0%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/">
       
       
-        <link rel="next" href="../Jupyter%20notebook%20%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%8B%E8%BD%BD/">
+        <link rel="next" href="../jupyter-notebook-extensions/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>2019 02 11 Morse code - YingweiGuo's Notes</title>
+        <title>Command line parameters using typer - YingweiGuo's Notes</title>
       
     
     
@@ -85,11 +85,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -119,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2019 02 11 Morse code
+              Command line parameters using typer
             
           </span>
         </div>
@@ -606,64 +601,15 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    2019 02 11 Morse code
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    2019 02 11 Morse code
+    Command line parameters using typer
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    脚本如下
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -676,11 +622,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Jupyter%20notebook%20%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+      <a href="../jupyter-notebook-extensions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jupyter notebook 安装与下载
+    Jupyter notebook extensions
   </span>
   
 
@@ -696,11 +642,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Jupyter%20notebook%20%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../jupyter-notebook-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jupyter notebook 插件安装
+    Jupyter notebook installation
   </span>
   
 
@@ -716,11 +662,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../typer%E4%B8%BA%E8%84%9A%E6%9C%AC%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/" class="md-nav__link">
+      <a href="../morse-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Typer为脚本添加命令行参数
+    Morse code
   </span>
   
 
@@ -1580,11 +1526,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/" class="md-nav__link">
+      <a href="../../../blog/category/usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    教程
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/essay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Essay
   </span>
   
 
@@ -1627,35 +1593,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    脚本如下
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1667,83 +1604,135 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../tags/#python" class="md-tag">python</a>
+    
+  
+</nav>
+
 
   
   
 
 
-  <h1>2019 02 11 Morse code</h1>
+  <h1>Command line parameters using typer</h1>
 
-<div><h2 id="_1">介绍<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>下面是一个用python写的进行英语和摩尔斯电码转换的程序，纯属练习和娱乐，如有错误欢迎指正。  </p>
-<h2 id="_2">说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<ul>
-<li>输入的英语只能是单词，标点符号无法识别！</li>
-<li>转换出的摩尔斯电码字母之间用空格区分，单词之间用/区分。</li>
-</ul>
-<h2 id="_3">脚本如下<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<div class="highlight"><span class="filename">Python</span><pre><span></span><code><span class="c1"># program for convertion between words and Morse code</span>
-<span class="sd">'''</span>
-<span class="sd">Author:will</span>
-<span class="sd">Date  :2019/2/11</span>
-<span class="sd">E-mail:willgyw@126.com</span>
-<span class="sd">'''</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">typer</span>
 
-<span class="c1"># dict of words2morse</span>
-<span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="s1">'.-'</span>  <span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span><span class="s1">'-...'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span><span class="s1">'-.-.'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">:</span><span class="s1">'-.'</span>  <span class="p">,</span> <span class="s1">'e'</span><span class="p">:</span><span class="s1">'.'</span>   <span class="p">,</span>
-         <span class="s1">'f'</span><span class="p">:</span><span class="s1">'..-.'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">:</span><span class="s1">'--.'</span> <span class="p">,</span> <span class="s1">'h'</span><span class="p">:</span><span class="s1">'....'</span><span class="p">,</span> <span class="s1">'i'</span><span class="p">:</span><span class="s1">'..'</span>  <span class="p">,</span> <span class="s1">'j'</span><span class="p">:</span><span class="s1">'.---'</span><span class="p">,</span>
-         <span class="s1">'k'</span><span class="p">:</span><span class="s1">'-.-'</span> <span class="p">,</span> <span class="s1">'l'</span><span class="p">:</span><span class="s1">'.-..'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">:</span><span class="s1">'--'</span>  <span class="p">,</span> <span class="s1">'n'</span><span class="p">:</span><span class="s1">'-.'</span>  <span class="p">,</span> <span class="s1">'o'</span><span class="p">:</span><span class="s1">'---'</span> <span class="p">,</span>
-         <span class="s1">'p'</span><span class="p">:</span><span class="s1">'.--.'</span><span class="p">,</span> <span class="s1">'q'</span><span class="p">:</span><span class="s1">'--.-'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">:</span><span class="s1">'.-.'</span> <span class="p">,</span> <span class="s1">'s'</span><span class="p">:</span><span class="s1">'...'</span> <span class="p">,</span> <span class="s1">'t'</span><span class="p">:</span><span class="s1">'-'</span>   <span class="p">,</span>
-         <span class="s1">'u'</span><span class="p">:</span><span class="s1">'..-'</span> <span class="p">,</span> <span class="s1">'v'</span><span class="p">:</span><span class="s1">'...-'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">:</span><span class="s1">'.--'</span> <span class="p">,</span> <span class="s1">'x'</span><span class="p">:</span><span class="s1">'-..-'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span><span class="s1">'-.--'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">:</span><span class="s1">'--..'</span><span class="p">,</span>
-         <span class="s1">'0'</span><span class="p">:</span><span class="s1">'-----'</span> <span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span><span class="s1">'.----'</span> <span class="p">,</span> <span class="s1">'2'</span><span class="p">:</span><span class="s1">'..---'</span> <span class="p">,</span> <span class="s1">'3'</span><span class="p">:</span> <span class="s1">'...--'</span><span class="p">,</span> <span class="s1">'4'</span><span class="p">:</span> <span class="s1">'....-'</span> <span class="p">,</span>
-         <span class="s1">'5'</span><span class="p">:</span> <span class="s1">'.....'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">:</span> <span class="s1">'-....'</span><span class="p">,</span> <span class="s1">'7'</span><span class="p">:</span> <span class="s1">'--...'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">:</span> <span class="s1">'---..'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">:</span> <span class="s1">'----.'</span> <span class="p">}</span>
 
-<span class="c1"># dict of morse2words</span>
-<span class="n">dict2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">dict1</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-
-<span class="k">def</span> <span class="nf">encode</span><span class="p">():</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Input a sentence you want to endoce, NO PUNCTUATION:"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">' '</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">compare_lists</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">same</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">list2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">item1</span><span class="p">,</span> <span class="n">item2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">item1</span> <span class="o">==</span> <span class="s1">'00'</span> <span class="ow">or</span> <span class="n">item2</span> <span class="o">==</span> <span class="s1">'00'</span><span class="p">:</span>   <span class="c1"># what is the symbol of NA in ped?</span>
+            <span class="k">continue</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">[</span><span class="n">letter</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">item1</span> <span class="o">==</span> <span class="n">item2</span><span class="p">:</span>
+                <span class="n">same</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">same</span><span class="p">,</span> <span class="n">total</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">decode</span><span class="p">():</span>
-    <span class="n">codes</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Input Morse code you want to decode, ONLY MORSE CODE:"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">sign</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">sign</span> <span class="o">==</span> <span class="s1">'/'</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">dict2</span><span class="p">[</span><span class="n">sign</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">compare_genotypes</span><span class="p">(</span><span class="n">ped</span><span class="p">:</span> <span class="n">typer</span><span class="o">.</span><span class="n">FileText</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="s1">'--ped'</span><span class="p">,</span> <span class="s1">'-p'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">'包含所有待比较样本的PED文件'</span><span class="p">),</span>
+                      <span class="n">lst</span><span class="p">:</span> <span class="n">typer</span><span class="o">.</span><span class="n">FileText</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="s1">'--lst'</span><span class="p">,</span> <span class="s1">'-l'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">'指定待比较样本的LIST文件，格式为每行一对待比较样本名，以空格或制表符分割'</span><span class="p">),</span>
+                      <span class="c1">#out: typer.FileTextWrite  = typer.Option(..., '--out', '-o', help='输出文件名')):  这样的话参数非必须</span>
+                      <span class="n">out</span><span class="p">:</span> <span class="n">typer</span><span class="o">.</span><span class="n">FileTextWrite</span>  <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="s1">'--out'</span><span class="p">,</span> <span class="s1">'-o'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">'输出文件名'</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">'''</span>
+<span class="sd">    比较指定样本之间的基因型一致率</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>    
-    <span class="k">while</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Encode(Words to Morse codes) or Decode(Morse codes to Words).Plase input [0/1]"</span><span class="p">)</span>
+<span class="sd">    --ped: 标准PLINK格式的PED文件</span>
 
-        <span class="k">if</span>   <span class="n">choice</span> <span class="o">==</span> <span class="s1">'0'</span><span class="p">:</span>
-            <span class="n">encode</span><span class="p">()</span>
-        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">:</span>
-            <span class="n">decode</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">break</span>
+<span class="sd">    --lst: 指定样本名，例如：</span>
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></div></div>
+<span class="sd">    \n</span>
+<span class="sd">    \tALT1  ALT2</span>
+
+<span class="sd">    \tALT2  ALT3</span>
+
+<span class="sd">    '''</span>
+    <span class="n">iid_gt_dct</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ped</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">iid</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">gt</span> <span class="o">=</span> <span class="p">[</span><span class="n">lines</span><span class="p">[</span><span class="mi">6</span><span class="p">:][</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">),</span> <span class="mi">2</span><span class="p">)]</span>
+        <span class="n">iid_gt_dct</span><span class="p">[</span><span class="n">iid</span><span class="p">]</span> <span class="o">=</span> <span class="n">gt</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">id1</span><span class="p">,</span> <span class="n">id2</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">gt1</span><span class="p">,</span> <span class="n">gt2</span> <span class="o">=</span> <span class="n">iid_gt_dct</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">id1</span><span class="p">,</span> <span class="s1">'NA'</span><span class="p">),</span> <span class="n">iid_gt_dct</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">id2</span><span class="p">,</span> <span class="s1">'NA'</span><span class="p">)</span>
+        <span class="n">num_lst</span> <span class="o">=</span> <span class="n">compare_lists</span><span class="p">(</span><span class="n">gt1</span><span class="p">,</span> <span class="n">gt2</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">id1</span><span class="p">,</span> <span class="n">id2</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">num_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_lst</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))])</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">typer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compare_genotypes</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2023</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2023</span>
       
     
   </small>
@@ -1792,13 +1781,13 @@
         
         
           
-          <a href="../Jupyter%20notebook%20%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%8B%E8%BD%BD/" class="md-footer__link md-footer__link--next" aria-label="Next: Jupyter notebook 安装与下载" rel="next">
+          <a href="../jupyter-notebook-extensions/" class="md-footer__link md-footer__link--next" aria-label="Next: Jupyter notebook extensions" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Jupyter notebook 安装与下载
+                Jupyter notebook extensions
               </div>
             </div>
             <div class="md-footer__button md-icon">

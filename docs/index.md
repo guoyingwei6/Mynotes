@@ -6,10 +6,11 @@
 
 ## 本站的几个板块
 
-* [**01.Programing**](./01.Programing/) ： 编程相关。
-* [**02.Bioinfomatics**](./02.Bioinfomatics/)：生信相关。 
-* [**03.Reasearch**](./03.Research/) ：科研项目。
-* [**04.About**](./04.About/about/)  ：关于。
+* [**01.Programing**](./01.Programing/index.md) ： 编程相关。
+* [**02.Bioinfomatics**](./02.Bioinfomatics/index.md)：生信相关。 
+* [**03.Reasearch**](./03.Research/index.md) ：科研项目。
+* [**04.About**](./04.About/about.md) ：关于。
+* [**Blog**](./blog/index.md)：博客。
 
 ## 结语
 

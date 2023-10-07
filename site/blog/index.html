@@ -12,7 +12,7 @@
         <link rel="prev" href="../04.About/about/">
       
       
-        <link rel="next" href="category/">
+        <link rel="next" href="category/usage/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -595,11 +595,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01.Programing/02.Python/2019-02-11-Morse-code/" class="md-nav__link">
+      <a href="../01.Programing/02.Python/command-line-parameters-using-typer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2019 02 11 Morse code
+    Command line parameters using typer
   </span>
   
 
@@ -615,11 +615,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01.Programing/02.Python/Jupyter%20notebook%20%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+      <a href="../01.Programing/02.Python/jupyter-notebook-extensions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jupyter notebook 安装与下载
+    Jupyter notebook extensions
   </span>
   
 
@@ -635,11 +635,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01.Programing/02.Python/Jupyter%20notebook%20%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../01.Programing/02.Python/jupyter-notebook-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jupyter notebook 插件安装
+    Jupyter notebook installation
   </span>
   
 
@@ -655,11 +655,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01.Programing/02.Python/typer%E4%B8%BA%E8%84%9A%E6%9C%AC%E6%B7%BB%E5%8A%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/" class="md-nav__link">
+      <a href="../01.Programing/02.Python/morse-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Typer为脚本添加命令行参数
+    Morse code
   </span>
   
 
@@ -1458,6 +1458,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#blognoteurl-title-header" class="md-nav__link">
+    blog和note的url, title, header的关系说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     第一篇博客
   </a>
@@ -1575,11 +1582,31 @@
   
   
     <li class="md-nav__item">
-      <a href="category/" class="md-nav__link">
+      <a href="category/usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    教程
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="category/essay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Essay
   </span>
   
 
@@ -1638,6 +1665,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#blognoteurl-title-header" class="md-nav__link">
+    blog和note的url, title, header的关系说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     第一篇博客
   </a>
@@ -1670,7 +1704,7 @@
           <li class="md-meta__item">
             in
             
-              <a href="category/" class="md-meta__link">教程</a></li>
+              <a href="category/usage/" class="md-meta__link">Usage</a></li>
         
         
           
@@ -1906,12 +1940,56 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2023-10-07 00:00:00">October 7, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/usage/" class="md-meta__link">Usage</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="blognoteurl-title-header"><a class="toclink" href="post-and-notes-url-title-header-format/">blog和note的url, title, header的关系说明</a></h2>
+<h3 id="blog"><a class="toclink" href="post-and-notes-url-title-header-format/#blog">Blog</a></h3>
+<p>blog部分post URL是可以自定义的，目前的设置的<code>post_url_format: "{slug}"</code>，通过header部分的slug可以自定义slug信息。</p>
+<h3 id="note"><a class="toclink" href="post-and-notes-url-title-header-format/#note">Note</a></h3>
+<p>note部分，
+不添加title属性，不包含一级标题的话，url显示md文件名，导航显示文件名，标题显示文件名。
+不添加title属性，包含一级标题的话，url显示md文件名，导航显示一级标题，标题显示一级标题。
+添加title属性，不包含一级标题的话，url显示md文件名，导航显示title，标题显示title，
+添加title属性，包含一级标题的话，url显示md文件名，导航显示title，标题显示一级标题。</p>
+<p>总结一下，url是跟着md文件名走的，而title控制左边导航栏显示名称，一级标题控制这篇笔记最上面的标题名称，如果确实则用另一个互补，都缺失用md文件名互补。</p>
+    <nav class="md-post__action">
+      <a href="post-and-notes-url-title-header-format/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-10-06 00:00:00">October 6, 2023</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="category/" class="md-meta__link">教程</a></li>
+              <a href="category/essay/" class="md-meta__link">Essay</a></li>
         
         
           
@@ -1994,13 +2072,13 @@
         
         
           
-          <a href="category/" class="md-footer__link md-footer__link--next" aria-label="Next: 教程" rel="next">
+          <a href="category/usage/" class="md-footer__link md-footer__link--next" aria-label="Next: Usage" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                教程
+                Usage
               </div>
             </div>
             <div class="md-footer__button md-icon">
