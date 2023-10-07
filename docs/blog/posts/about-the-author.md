@@ -14,7 +14,7 @@ slug: first-blog
 暂时决定分工如下：
 
 - OneNote：**信息收集**，用来复制网上的各种教程或方法。
-- Obsidian：**知识整理**，只用来写自己原创的内容
-- mkdocs：**内容创作**，用来吧Obsidian当中的笔记发布到网站上。其中blog模块用来写博客。
+- Obsidian：**知识整理**，只用来写自己原创的内容。
+- mkdocs：**内容创作**，用来把Obsidian当中的笔记发布到网站上。其中blog模块用来写博客。
 - Montaigne：依赖于Apple Notes，只用来分享苹果设备及其使用技巧。
 - jekyll：用于记录生活，写日记。
