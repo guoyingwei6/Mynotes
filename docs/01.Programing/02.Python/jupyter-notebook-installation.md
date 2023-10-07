@@ -1,7 +1,10 @@
 ---
+#title: Jupyter notebook下载与安装
 tags:
   - python
 ---
+
+
 ## 安装
 
 **不要用root用户pip install**

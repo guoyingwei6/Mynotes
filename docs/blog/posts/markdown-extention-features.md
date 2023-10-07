@@ -1,7 +1,7 @@
 ---
 date: 2023-10-07
 categories:
-  - 教程
+  - Usage
 slug: markdown-extention-features
 ---
 

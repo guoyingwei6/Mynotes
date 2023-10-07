@@ -49,7 +49,8 @@ plugins:
       post_readtime: true
       categories: true
       blog_toc: true
-      post_url_format: "{categories}/{slug}"
+      post_url_format: "{slug}"
+      categories_url_format: "category/{slug}"
       post_excerpt: optional
       archive_toc: true
       categories_toc: true

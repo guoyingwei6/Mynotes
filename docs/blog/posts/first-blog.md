@@ -1,7 +1,7 @@
 ---
 date: 2023-10-06
 categories:
-  - 随笔
+  - Essay
 slug: first-blog
 ---
 
