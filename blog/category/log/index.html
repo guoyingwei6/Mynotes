@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../tutorial/">
       
       
-        <link rel="next" href="../essay/">
+        <link rel="next" href="../../archive/2023/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Usage - YingweiGuo's Notes</title>
+        <title>Log - YingweiGuo's Notes</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usage" class="md-skip">
+        <a href="#log" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usage
+              Log
             
           </span>
         </div>
@@ -1521,6 +1521,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1536,7 +1556,7 @@
           
   
   <span class="md-ellipsis">
-    Usage
+    Log
   </span>
   
 
@@ -1547,7 +1567,7 @@
         
   
   <span class="md-ellipsis">
-    Usage
+    Log
   </span>
   
 
@@ -1569,15 +1589,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#markdown" class="md-nav__link">
-    扩展markdown功能
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#blognoteurl-title-header" class="md-nav__link">
-    blog和note的url, title, header的关系说明
+  <a href="#_1" class="md-nav__link">
+    第一篇博客
   </a>
   
 </li>
@@ -1586,26 +1599,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../essay/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Essay
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1653,15 +1646,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#markdown" class="md-nav__link">
-    扩展markdown功能
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#blognoteurl-title-header" class="md-nav__link">
-    blog和note的url, title, header的关系说明
+  <a href="#_1" class="md-nav__link">
+    第一篇博客
   </a>
   
 </li>
@@ -1678,7 +1664,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h1>
+        <h1 id="log">Log<a class="headerlink" href="#log" title="Permanent link">¶</a></h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -1687,253 +1673,12 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-07 00:00:00">October 7, 2023</time></li>
+          <time datetime="2023-10-06 00:00:00">October 6, 2023</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="./" class="md-meta__link">Usage</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="markdown"><a class="toclink" href="../../markdown-extention-features/">扩展markdown功能</a></h2>
-<details class="warning" open="open">
-<summary>Warning</summary>
-<p>这里的语法并不是Markdown通用语法，其它主题或软件可能并不支持，慎用！</p>
-</details>
-<h3 id="content-tabs"><a class="toclink" href="../../markdown-extention-features/#content-tabs">content tabs</a></h3>
-<h4 id="configuration"><a class="toclink" href="../../markdown-extention-features/#configuration">Configuration</a></h4>
-<p>This configuration enables content tabs, and allows to nest arbitrary content inside content tabs, including code blocks and ... more content tabs! Add the following lines to <code>mkdocs.yml</code>:</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-</code></pre></div>
-<h4 id="usage"><a class="toclink" href="../../markdown-extention-features/#usage">Usage</a></h4>
-<h5 id="grouping-code-blocks"><a class="toclink" href="../../markdown-extention-features/#grouping-code-blocks">Grouping code blocks</a></h5>
-<p>Code blocks are one of the primary targets to be grouped, and can be considered a special case of content tabs, as tabs with a single code block are always rendered without horizontal spacing:</p>
-<div class="highlight"><span class="filename">Content tabs with code blocks</span><pre><span></span><code>=== &quot;C&quot;
-
-    ``` c
-    #include &lt;stdio.h&gt;
-
-    int main(void) {
-      printf(&quot;Hello world!\n&quot;);
-      return 0;
-    }
-    ```
-
-=== &quot;C++&quot;
-
-    ``` c++
-    #include &lt;iostream&gt;
-
-    int main(void) {
-      std::cout &lt;&lt; &quot;Hello world!&quot; &lt;&lt; std::endl;
-      return 0;
-    }
-    ```
-</code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">C</label><label for="__tabbed_9_2">C++</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">C</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">C++</span><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<h5 id="grouping-other-content"><a class="toclink" href="../../markdown-extention-features/#grouping-other-content">Grouping other content</a></h5>
-<div class="highlight"><span class="filename">Content tabs</span><pre><span></span><code>=== &quot;Unordered list&quot;
-
-    * Sed sagittis eleifend rutrum
-    * Donec vitae suscipit est
-    * Nulla tempor lobortis orci
-
-=== &quot;Ordered list&quot;
-
-    1. Sed sagittis eleifend rutrum
-    2. Donec vitae suscipit est
-    3. Nulla tempor lobortis orci
-</code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Unordered list</label><label for="__tabbed_10_2">Ordered list</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul>
-<li>Sed sagittis eleifend rutrum</li>
-<li>Donec vitae suscipit est</li>
-<li>Nulla tempor lobortis orci</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ol>
-<li>Sed sagittis eleifend rutrum</li>
-<li>Donec vitae suscipit est</li>
-<li>Nulla tempor lobortis orci</li>
-</ol>
-</div>
-</div>
-</div>
-<h5 id="embedded-content"><a class="toclink" href="../../markdown-extention-features/#embedded-content">Embedded content</a></h5>
-<div class="highlight"><span class="filename">Content tabs in admonition</span><pre><span></span><code>!!! example
-
-    === &quot;Unordered List&quot;
-
-        ``` markdown
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-        ```
-
-    === &quot;Ordered List&quot;
-
-        ``` markdown
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-        ```
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Unordered List</label><label for="__tabbed_11_2">Ordered List</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><span class="k">*</span><span class="w"> </span>Sed sagittis eleifend rutrum
-<span class="k">*</span><span class="w"> </span>Donec vitae suscipit est
-<span class="k">*</span><span class="w"> </span>Nulla tempor lobortis orci
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><span class="k">1.</span> Sed sagittis eleifend rutrum
-<span class="k">2.</span> Donec vitae suscipit est
-<span class="k">3.</span> Nulla tempor lobortis orci
-</code></pre></div>
-</div>
-</div>
-</div>
-</div>
-<h3 id="admonitions"><a class="toclink" href="../../markdown-extention-features/#admonitions">Admonitions</a></h3>
-<h4 id="demo"><a class="toclink" href="../../markdown-extention-features/#demo">Demo</a></h4>
-<p>mkdocs支持Admonitions，在网页上显示类似警告信息。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">渲染效果</label><label for="__tabbed_12_2">源代码</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<details class="note" open="open">
-<summary>Admonition</summary>
-<p>Action is the antidote to despair.</p>
-</details>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>???+ note &quot;Admonition&quot;
-    Action is the antidote to despair.
-</code></pre></div>
-</div>
-</div>
-</div>
-<details class="quote" open="open">
-<summary>Quote</summary>
-<ul>
-<li>
-<p>Adding a <code>+</code> after the <code>???</code> token renders the block expanded</p>
-</li>
-<li>
-<p>通过缩进控制Tab和Admonition结构</p>
-</li>
-</ul>
-</details>
-<h4 id="supported-types"><a class="toclink" href="../../markdown-extention-features/#supported-types">Supported types</a></h4>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<details class="info">
-<summary>Info</summary>
-<p>Action is the antidote to despair.</p>
-</details>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<p>Action is the antidote to despair.</p>
-</details>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<details class="warning" open="open">
-<summary>Warning</summary>
-<p>Action is the antidote to despair.</p>
-</details>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Action is the antidote to despair.</p>
-</div>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>Action is the antidote to despair.</p>
-</div>
-    <nav class="md-post__action">
-      <a href="../../markdown-extention-features/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-10-07 00:00:00">October 7, 2023</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">Usage</a></li>
+              <a href="./" class="md-meta__link">Log</a></li>
         
         
           
@@ -1948,18 +1693,19 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="blognoteurl-title-header"><a class="toclink" href="../../post-and-notes-url-title-header-format/">blog和note的url, title, header的关系说明</a></h2>
-<h3 id="blog"><a class="toclink" href="../../post-and-notes-url-title-header-format/#blog">Blog</a></h3>
-<p>blog部分post URL是可以自定义的，目前的设置的<code>post_url_format: "{slug}"</code>，通过header部分的slug可以自定义slug信息。</p>
-<h3 id="note"><a class="toclink" href="../../post-and-notes-url-title-header-format/#note">Note</a></h3>
-<p>note部分，
-不添加title属性，不包含一级标题的话，url显示md文件名，导航显示文件名，标题显示文件名。
-不添加title属性，包含一级标题的话，url显示md文件名，导航显示一级标题，标题显示一级标题。
-添加title属性，不包含一级标题的话，url显示md文件名，导航显示title，标题显示title，
-添加title属性，包含一级标题的话，url显示md文件名，导航显示title，标题显示一级标题。</p>
-<p>总结一下，url是跟着md文件名走的，而title控制左边导航栏显示名称，一级标题控制这篇笔记最上面的标题名称，如果确实则用另一个互补，都缺失用md文件名互补。</p>
+    <h2 id="_1"><a class="toclink" href="../../first-blog/">第一篇博客</a></h2>
+<p>最近一直折腾Obsidian和博客以及mkdocs，荒废了学业。</p>
+<p>现在记笔记同时有Obsidian和OneNote，写博客同时有Montaigne、jekyll和mkdocs。 </p>
+<p>暂时决定分工如下：</p>
+<ul>
+<li>OneNote：<strong>信息收集</strong>，用来复制网上的各种教程或方法。</li>
+<li>Obsidian：<strong>知识整理</strong>，只用来写自己原创的内容。</li>
+<li>mkdocs：<strong>内容创作</strong>，用来把Obsidian当中的笔记发布到网站上。其中blog模块用来写博客。</li>
+<li>Montaigne：依赖于Apple Notes，只用来分享苹果设备及其使用技巧。</li>
+<li>jekyll：用于记录生活，写日记。</li>
+</ul>
     <nav class="md-post__action">
-      <a href="../../post-and-notes-url-title-header-format/">
+      <a href="../../first-blog/">
         Continue reading
       </a>
     </nav>
@@ -1998,7 +1744,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Blog" rel="prev">
+          <a href="../tutorial/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tutorial" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2008,20 +1754,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Blog
+                Tutorial
               </div>
             </div>
           </a>
         
         
           
-          <a href="../essay/" class="md-footer__link md-footer__link--next" aria-label="Next: Essay" rel="next">
+          <a href="../../archive/2023/" class="md-footer__link md-footer__link--next" aria-label="Next: 2023" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Essay
+                2023
               </div>
             </div>
             <div class="md-footer__button md-icon">
