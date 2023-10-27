@@ -3,7 +3,6 @@ tags:
   - tmux
 date: 2023-09-30 21:23
 updated: 2023-10-04 10:00
-password: password
 ---
 
 ## tmux介绍

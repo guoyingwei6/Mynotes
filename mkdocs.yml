@@ -75,8 +75,9 @@ plugins:
       enable_creation_date: true
   - search: {}
   - encryptcontent: 
-      global_password: 'your_password'
-
+      password_button: True
+      #global_password: 'password'
+      
 
 
 
